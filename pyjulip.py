@@ -3,8 +3,8 @@ from ase.calculators.calculator import Calculator
 from ase.constraints import voigt_6_to_full_3x3_stress, full_3x3_to_voigt_6_stress
 from ase.optimize.optimize import Optimizer
 
-from julia.api import Julia
-jl = Julia(compiled_modules=False)
+from julia import Julia
+Julia(runtime='C:\\Users\\CVD2\\AppData\\Local\\Programs\\Julia-1.7.1\\bin\\julia.exe')
 
 from julia import Main
 Main.eval("using ASE, JuLIP, ACE1")

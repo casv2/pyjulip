@@ -18,7 +18,10 @@ convert = Main.eval("julip_at(a) = JuLIP.Atoms(a)")
 def ACE1(potname):
     Main.eval("using ACE1")
     Main.eval("D = load_dict(\"" + potname + "\")")
-    Main.eval("IP = read_dict(D[\"IP\"])")
+    try:
+        Main.eval("IP = read_dict(D[\"IP\"])")
+    except:
+        Main.eval("IP = read_dict(D[\"potential\"])")
     ASE_IP = JulipCalculator("IP")
     return ASE_IP
 
